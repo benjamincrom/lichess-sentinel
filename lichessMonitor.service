@@ -1,0 +1,14 @@
+[Unit]
+Description=Lichess Monitor
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/bcrom/lichess-sentinel/lichess_sentinel.py
+WorkingDirectory=/home/bcrom/lichess-sentinel/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=bcrom
+
+[Install]
+WantedBy=multi-user.target
